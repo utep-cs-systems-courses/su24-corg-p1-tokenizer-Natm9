@@ -58,16 +58,13 @@ void print_history (List *list)
   }
 }
 
-void free_history (List *list)
-{
+void free_history(List *list) {
   Item *cur = list->root;
-  while (cur->next != 0) {
+  while (cur != NULL) {
     Item *prev = cur;
     cur = cur->next;
-    free (prev->str);
-    free (prev);
+    free(prev->str);
+    free(prev);
   }
-  free (cur->str);
-  free (cur);
   free(list);
 }

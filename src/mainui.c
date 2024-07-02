@@ -67,6 +67,7 @@ int main() {
 	puts ("You chose to free the tokens.");
 	free_tokens(tokens);
 	tokens = NULL;
+	free_history(history);
 
       } else {
 
